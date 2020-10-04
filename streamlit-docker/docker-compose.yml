@@ -1,0 +1,9 @@
+version: "3"
+services:
+  streamlit:
+    build: .
+    command: "streamlit run --server.port ${SD_PORT} processing/app.py"
+    ports:
+      - "${SD_PORT}:${SD_PORT}"
+    volumes:
+      - ".:/usr/src/app/"
